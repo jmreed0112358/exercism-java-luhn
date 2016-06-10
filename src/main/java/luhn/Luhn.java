@@ -33,7 +33,17 @@ public class Luhn
 	 * @return
 	 */
 	public int[] getAddends( ) {
-		return IntegerUtils.integerToIntArray( this.number, false );
+		int[] digitArray = IntegerUtils.integerToIntArray( this.number, true );
+		for ( int i = 0 ; i < digitArray.length ; i++ ) {
+			if ( (i + 1) % 2 == 0 ) {
+				digitArray[i] = digitArray[i] * 2;
+				if ( digitArray[i] >= 10 ) {
+					digitArray[i] -= 9;
+				}
+			}
+		}
+		
+		return IntegerUtils.reverseIntArray( digitArray );
 	}
 	
 	/**
