@@ -60,7 +60,13 @@ public class Luhn
 	 * @return
 	 */
 	public int getCheckSum( ) {
-		throw new NotImplementedException();
+		int[] digitArray = this.getAddends( );
+		int result = 0;
+		for ( int i = 0 ; i < digitArray.length ; i++ ) {
+			result += digitArray[i];
+		}
+		
+		return result;
 	}
 	
 	/**
