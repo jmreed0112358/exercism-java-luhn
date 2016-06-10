@@ -14,7 +14,8 @@ public class LuhnTest {
         assertEquals(expectedOutput, luhn.getCheckDigit());
     }
 
-    @Test void checkDigitIsRightMostDigit_NegativeInput() {
+    @Test 
+    public void checkDigitIsRightMostDigit_NegativeInput() {
     	Luhn luhn = new Luhn(-34567);
         int expectedOutput = 7;
 
