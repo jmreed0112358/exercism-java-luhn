@@ -14,6 +14,13 @@ public class LuhnTest {
         assertEquals(expectedOutput, luhn.getCheckDigit());
     }
 
+    @Test void checkDigitIsRightMostDigit_NegativeInput() {
+    	Luhn luhn = new Luhn(-34567);
+        int expectedOutput = 7;
+
+        assertEquals(expectedOutput, luhn.getCheckDigit());
+    }
+    
     @Test
     public void addendsDoublesEveryOtherNumberFromRight() {
         Luhn luhn = new Luhn(12121);
@@ -62,6 +69,13 @@ public class LuhnTest {
         assertEquals(expectedOutput, luhn.isValid());
     }
 
+    @Test
+    public void luhnCanCreateSimpleNumbersWithValidCheckDigit_NegativeInput() {
+        long expectedOutput = 1230;
+
+        assertEquals(expectedOutput, Luhn.create(123));
+    }
+    
     @Test
     public void luhnCanCreateSimpleNumbersWithValidCheckDigit() {
         long expectedOutput = 1230;

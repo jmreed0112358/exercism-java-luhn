@@ -9,7 +9,7 @@ public class Luhn
 	
 	public Luhn( int number )
 	{
-		this.number = number;
+		this.number = Math.abs( number );
 	}
 
 	public static long create( long input ) {
