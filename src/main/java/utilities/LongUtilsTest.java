@@ -35,7 +35,7 @@ public class LongUtilsTest
 	@Test
 	public void test_longToIntArray_PositiveInput_Reverse_ExpectedResult() {
 		int[] expected = { 0, 1, 2, 3, 4, 5 };
-		int[] actual = LongUtils.longToIntArray( 543210L, false );
+		int[] actual = LongUtils.longToIntArray( 543210L, true );
 		
 		assertEquals( expected.length, actual.length );
 		
@@ -47,7 +47,7 @@ public class LongUtilsTest
 	@Test
 	public void test_longToIntArray_NegativeInput_Reverse_ExpectedResult() {
 		int[] expected = { 0, 1, 2, 3, 4, 5 };
-		int[] actual = LongUtils.longToIntArray( 543210L, false );
+		int[] actual = LongUtils.longToIntArray( 543210L, true );
 		
 		assertEquals( expected.length, actual.length );
 		
