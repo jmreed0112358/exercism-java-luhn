@@ -57,6 +57,18 @@ public class IntegerUtilsTest
 	}
 	
 	@Test
+	public void test_integerToIntArray_NullInput_ThrowsException() {
+		try {
+			IntegerUtils.integerToIntArray( null, false );
+			fail("Expected to catch NullPointerException");
+		} catch ( NullPointerException npe ) {
+			
+		} catch ( Exception e ) {
+			fail("Supposed to catch NullPointerException");
+		}
+	}
+	
+	@Test
 	public void test_reverseIntArray_ValidInput_ExpectedResult() {
 		int[] expected = { 0, 1, 2, 3, 4, 5 };
 		int[] input = { 5, 4, 3, 2, 1, 0 };
