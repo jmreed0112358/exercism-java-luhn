@@ -1,3 +1,6 @@
+# Ignore vi swap files.
+*.swp
+
 *.class
 
 # Mobile Tools for Java (J2ME)
