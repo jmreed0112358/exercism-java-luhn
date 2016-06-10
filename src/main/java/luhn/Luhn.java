@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import exceptions.NotImplementedException;
+import utilities.IntegerUtils;
 
 public class Luhn
 {
@@ -32,7 +33,7 @@ public class Luhn
 	 * @return
 	 */
 	public int[] getAddends( ) {
-		throw new NotImplementedException();
+		return IntegerUtils.integerToIntArray( this.number, false );
 	}
 	
 	/**

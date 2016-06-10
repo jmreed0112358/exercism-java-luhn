@@ -19,4 +19,8 @@ public class IntegerUtils
 		
 		return result;
 	}
+	
+	public static int[] reverseIntArray( int[] input ) {
+		throw new NotImplementedException();
+	}
 }
