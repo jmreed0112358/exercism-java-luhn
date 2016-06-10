@@ -20,7 +20,16 @@ public class IntegerUtils
 		return result;
 	}
 	
-	public static int[] reverseIntArray( int[] input ) {
-		throw new NotImplementedException();
+	public static int[] reverseIntArray( int[] input ) throws NullPointerException {
+		if ( input == null ) {
+			throw new NullPointerException();
+		}
+		
+		int[] result = new int[ input.length ];
+		for ( int i = 0 ; i < input.length ; i++ ) {
+			result[ result.length - i - 1 ] = input[ i ];
+		}
+		
+		return result;
 	}
 }
