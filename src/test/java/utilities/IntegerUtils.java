@@ -4,9 +4,12 @@ import exceptions.NotImplementedException;
 
 public class IntegerUtils
 {
-	public static int[] integerToIntArray(Integer input) {
+	public static int[] integerToIntArray( Integer input, boolean reverse ) {
 		input = Math.abs( input );
 		String digits = input.toString( );
+		if (reverse) {
+			digits = new StringBuilder(digits).reverse( ).toString( );
+		}
 		char[] digitArray = digits.toCharArray( );
 		
 		int[] result = new int[digitArray.length];
