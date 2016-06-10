@@ -74,6 +74,6 @@ public class Luhn
 	 * @return
 	 */
 	public boolean isValid( ) {
-		throw new NotImplementedException();
+		return ( this.getCheckSum() % 10 == 0 );
 	}
 }
