@@ -1,10 +1,12 @@
 package luhn;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import exceptions.NotImplementedException;
 
 public class Luhn
 {
-
 	private Integer number = 0;
 	
 	public Luhn( int number )
