@@ -1,8 +1,5 @@
 package luhn;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import exceptions.NotImplementedException;
 import utilities.IntegerUtils;
 
