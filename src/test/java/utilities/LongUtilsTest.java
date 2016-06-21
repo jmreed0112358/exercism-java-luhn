@@ -11,6 +11,18 @@ import org.junit.Test;
 public class LongUtilsTest
 {
 	@Test
+	public void test_longToIntArray_TestCase_ExpectedResult() {
+		int[] expected = { 1, 4, 1, 4 };
+		int[] actual = LongUtils.longToIntArray( 1414L, false );
+		
+		assertEquals( expected.length, actual.length );
+		
+		for ( int i = 0 ; i < expected.length ; i++ ) {
+			assertEquals( expected[i], actual[i] );
+		}
+	}
+	
+	@Test
 	public void test_longToIntArray_PositiveInput_ExpectedResult() {
 		int[] expected = { 5, 4, 3, 2, 1, 0 };
 		int[] actual = LongUtils.longToIntArray( 543210L, false );
