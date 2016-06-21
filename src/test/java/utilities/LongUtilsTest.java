@@ -80,6 +80,15 @@ public class LongUtilsTest
 	}
 	
 	@Test
+	public void test_intArrayToLong_ValidInputTwo_ExpectedResult() {
+		int[] input = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2 };
+		long expected = 123456789012L;
+		long actual = LongUtils.intArrayToLong( input );
+		
+		assertEquals( expected, actual );
+	}
+	
+	@Test
 	public void test_intArrayToLong_EmptyInput_ThrowsException() {
 		try {
 			int[] input = { };
