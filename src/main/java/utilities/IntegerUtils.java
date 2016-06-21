@@ -28,4 +28,25 @@ public class IntegerUtils
 		
 		return result;
 	}
+	
+	/**
+	 * A valid integer array is one where each element in the array is a positive integer in the interval [0, 9].
+	 * Unit Tests: Complete.
+	 * @param input
+	 * @return
+	 */
+	public static boolean isIntArrayValid( int[] input ) {
+		if ( input == null ) {
+			throw new NullPointerException();
+		} else if ( input.length == 0 ) {
+			return false;
+		}
+		
+		for ( int i = 0 ; i < input.length ; i++ ) {
+			if ( input[i] >= 10 ) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
