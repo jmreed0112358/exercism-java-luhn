@@ -13,8 +13,8 @@ public class LuhnTest {
 
 	@Test
 	public void test_getAddends_ClassFunction_ValidInput_ReturnsValidArray() {
-		int[] input = { 1, 2, 1, 2 };
-		int[] expected = { 1, 4, 1, 4 };
+		int[] input = { 1,2,1,2,1 };
+		int[] expected = { 1, 4, 1, 4, 1 };
 		int[] actual = Luhn.getAddends( input );
 		
 		assertEquals( expected.length, actual.length );
@@ -26,8 +26,8 @@ public class LuhnTest {
 	
 	@Test
 	public void test_getAddends_ClassFunction_ValidInputSubtracts9_ReturnsValidArray() {
-		int[] input = { 1, 8, 1, 8 };
-		int[] expected = { 1, 7, 1, 7 };
+		int[] input = { 1, 8, 1, 8, 1 };
+		int[] expected = { 1, 7, 1, 7, 1 };
 		int[] actual = Luhn.getAddends( input );
 		
 		assertEquals( expected.length, actual.length );
@@ -53,7 +53,7 @@ public class LuhnTest {
 	@Test
 	public void test_getAddends_ClassFunction_EmptyInput_ThrowsException() {
 		try {
-			int[] input = {  };
+			int[] input = { };
 			Luhn.getAddends( input );
 			fail("Expected to catch InvalidParameterException");
 		} catch ( InvalidParameterException ipe ) {
@@ -68,7 +68,7 @@ public class LuhnTest {
 		try {
 			Luhn.getAddends( null );
 			fail("Expected to catch NullPointerException");
-		} catch ( InvalidParameterException ipe ) {
+		} catch ( NullPointerException npe ) {
 			
 		} catch ( Exception e ) {
 			fail("Supposed to catch NullPointerException");

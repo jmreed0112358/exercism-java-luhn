@@ -19,16 +19,34 @@ public class Luhn
 	 * @return A long with a valid check digit.
 	 */
 	public static long create( long input ) {
-		int[] digitArray = LongUtils.longToIntArray( input, false );
-		int sum = 0;
+		int[] temp = LongUtils.longToIntArray( input, false );
+		int[] digitArray = new int[ temp.length + 1 ];
+		for ( int i = 0 ; i < temp.length ; i++ ) {
+			digitArray[i] = temp[i];
+		}
+		digitArray[digitArray.length - 1] = 0;
+		
+		int[] addends = getAddends(digitArray);
+	}
+	
+	/**
+	 * Given an valid int array, produce an int array representing the addends according to Luhn rules.
+	 * Unit Tests: Complete.
+	 * @param input
+	 * @return
+	 */
+	public static int[] getAddends( int[] input ) {
+		int[] digitArray = LongUtils.longToIntArray( input, true );
 		for ( int i = 0 ; i < digitArray.length ; i++ ) {
-			sum += digitArray[i];
+			if ( (i + 1) % 2 == 0 ) {
+				digitArray[i] = digitArray[i] * 2;
+				if ( digitArray[i] >= 10 ) {
+					digitArray[i] -= 9;
+				}
+			}
 		}
 		
-		int checkDigit = 10 - sum;
-		int[] result = new int[digitArray.length + 1];
-		result[result.length - 1] = checkDigit;
-		return LongUtils.
+		return IntegerUtils.reverseIntArray( digitArray );
 	}
 	
 	/**
