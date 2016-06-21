@@ -2,7 +2,6 @@ package luhn;
 
 import java.security.InvalidParameterException;
 
-import exceptions.NotImplementedException;
 import utilities.IntegerUtils;
 import utilities.LongUtils;
 
@@ -39,6 +38,11 @@ public class Luhn
 		return LongUtils.intArrayToLong( digitArray );
 	}
 	
+	/**
+	 * Given a sum, return the correct check digit.
+	 * @param sum
+	 * @return
+	 */
 	public static int getCorrectCheckDigit( int sum ) {
 		if ( sum < 0 ) {
 			throw new InvalidParameterException();
