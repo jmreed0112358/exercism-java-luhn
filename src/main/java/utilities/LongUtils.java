@@ -1,5 +1,7 @@
 package utilities;
 
+import java.security.InvalidParameterException;
+
 import exceptions.NotImplementedException;
 
 public class LongUtils
@@ -20,7 +22,29 @@ public class LongUtils
 		return result;
 	}
 	
+	/**
+	 * Takes a valid int array, and converts it to a long.
+	 * Unit Tests: Complete.
+	 * @param input
+	 * @return
+	 */
 	public static long intArrayToLong( int[] input ) {
-		throw new NotImplementedException();
+		if ( input == null ) {
+			throw new NullPointerException();
+		} else if ( input.length == 0 ) {
+			throw new InvalidParameterException();
+		}
+		
+		int[] inputReverse = new int[input.length];
+		for ( int i = 0 ; i < input.length ; i++ ) {
+			inputReverse[i] = input[input.length - 1 - i];
+		}
+		
+		long result = 0;
+		
+		for ( int i = 0 ; i < inputReverse.length ; i++ ) {
+			result += (long)(inputReverse[i] * Math.pow( 10, i ) );
+		}
+		return result;
 	}
 }
