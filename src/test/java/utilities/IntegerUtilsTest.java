@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import exceptions.NotImplementedException;
+
 public class IntegerUtilsTest
 {
 	@Test
@@ -91,6 +93,38 @@ public class IntegerUtilsTest
 		} catch ( Exception e ) {
 			fail("Supposed to catch NullPointerException");
 		}
+	}
+	
+	@Test
+	public void test_isIntArrayValid_ValidInput_ReturnsTrue() {
+		int[] input = { 1, 2, 3, 4, 5 };
 		
+		assertEquals( true, IntegerUtils.isIntArrayValid( input ) );
+	}
+	
+	@Test
+	public void test_isIntArrayValid_InvalidInput_ReturnsFalse() {
+		int[] input = { 10, 20, 30, 40, 50 };
+		
+		assertEquals( false, IntegerUtils.isIntArrayValid( input ) );
+	}
+	
+	@Test
+	public void test_isIntArrayValid_EmptyInput_ReturnFalse() {
+		int[] input = {  };
+		
+		assertEquals( false, IntegerUtils.isIntArrayValid( input ) );
+	}
+	
+	@Test
+	public void test_isIntArrayValid_NullInput_ThrowsException() {
+		try {
+			IntegerUtils.isIntArrayValid( null );
+			fail("Expected to catch NullPointer Exception");
+		} catch ( NullPointerException npe ) {
+			
+		} catch ( Exception e ) {
+			fail("Supposed to catch NullPointerException");
+		}
 	}
 }
