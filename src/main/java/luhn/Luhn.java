@@ -2,6 +2,7 @@ package luhn;
 
 import exceptions.NotImplementedException;
 import utilities.IntegerUtils;
+import utilities.LongUtils;
 
 public class Luhn
 {
@@ -18,7 +19,16 @@ public class Luhn
 	 * @return A long with a valid check digit.
 	 */
 	public static long create( long input ) {
-		throw new NotImplementedException();
+		int[] digitArray = LongUtils.longToIntArray( input, false );
+		int sum = 0;
+		for ( int i = 0 ; i < digitArray.length ; i++ ) {
+			sum += digitArray[i];
+		}
+		
+		int checkDigit = 10 - sum;
+		int[] result = new int[digitArray.length + 1];
+		result[result.length - 1] = checkDigit;
+		return LongUtils.
 	}
 	
 	/**

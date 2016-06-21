@@ -19,4 +19,8 @@ public class LongUtils
 		
 		return result;
 	}
+	
+	public static long intArrayToLong( int[] input ) {
+		throw new NotImplementedException();
+	}
 }
