@@ -1,5 +1,7 @@
 package luhn;
 
+import java.security.InvalidParameterException;
+
 import exceptions.NotImplementedException;
 import utilities.IntegerUtils;
 import utilities.LongUtils;
@@ -27,6 +29,10 @@ public class Luhn
 		digitArray[digitArray.length - 1] = 0;
 		
 		int[] addends = getAddends(digitArray);
+	}
+	
+	public static int getCorrectCheckDigit( int sum ) {
+		throw new NotImplementedException();
 	}
 	
 	/**

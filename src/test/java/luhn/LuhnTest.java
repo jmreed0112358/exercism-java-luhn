@@ -12,6 +12,34 @@ import java.security.InvalidParameterException;
 public class LuhnTest {
 
 	@Test
+	public void test_getCorrectCheckDigit_ValidInput_LessThanTen_ExpectedResult() {
+		int input = 6;
+		int expected = 4;
+		
+		assertEquals( expected, Luhn.getCorrectCheckDigit( input ) );
+	}
+	
+	@Test
+	public void test_getCorrectCheckDigit_ValidInput_GreaterThanTen_ExpectedResult() {
+		int input = 33;
+		int expected = 7;
+		
+		assertEquals( expected, Luhn.getCorrectCheckDigit( input ) );
+	}
+	
+	@Test
+	public void test_getCorrectCheckDigit_NegativeInput_ThrowsException() {
+		try {
+			Luhn.getCorrectCheckDigit( -10 );
+			fail("Expected to catch InvalidParameterException");
+		} catch ( InvalidParameterException ipe ) {
+			
+		} catch ( Exception e ) {
+			fail("Supposed to catch InvalidParameterException");
+		}
+	}
+	
+	@Test
 	public void test_getAddends_ClassFunction_ValidInput_ReturnsValidArray() {
 		int[] input = { 1,2,1,2,1 };
 		int[] expected = { 1, 4, 1, 4, 1 };
